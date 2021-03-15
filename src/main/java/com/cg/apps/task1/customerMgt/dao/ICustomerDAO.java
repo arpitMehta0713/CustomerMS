@@ -1,6 +1,6 @@
-package com.cg.apps.customerMgt.dao;
+package com.cg.apps.task1.customerMgt.dao;
 
-import com.cg.apps.customerMgt.entities.Customer;
+import com.cg.apps.task1.customerMgt.entities.Customer;
 
 public interface ICustomerDAO {
 	Customer add(Customer customer);

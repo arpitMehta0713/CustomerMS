@@ -1,11 +1,28 @@
-package com.cg.apps.customerMgt.entities;
+package com.cg.apps.task1.customerMgt.entities;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 	private LocalDateTime created;
+	@Id
+	@GeneratedValue
 	private Long accountId;
 	private double balance;
+
+	public Account() {
+
+	}
+
+	public Account( double balance, LocalDateTime created) {
+		setBalance(balance);
+		setCreated(created);
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -13,6 +30,7 @@ public class Account {
 		result = prime * result + ((accountId == null) ? 0 : accountId.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -29,24 +47,31 @@ public class Account {
 			return false;
 		return true;
 	}
+
 	public LocalDateTime getCreated() {
 		return created;
 	}
+
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
 	}
+
 	public Long getAccountId() {
 		return accountId;
 	}
+
 	public void setAccountId(Long accountId) {
 		this.accountId = accountId;
 	}
+
 	public double getBalance() {
 		return balance;
 	}
+
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
+
 	@Override
 	public String toString() {
 		return "Account [created=" + created + ", accountId=" + accountId + ", balance=" + balance + "]";
