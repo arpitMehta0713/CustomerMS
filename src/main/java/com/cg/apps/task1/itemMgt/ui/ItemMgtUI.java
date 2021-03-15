@@ -16,15 +16,21 @@ public class ItemMgtUI {
 	private ICustomerService custService;
 
 	public void start() {
-		Customer customer2 = custService.createCustomer("Abhishek");
+		/*Customer customer2 = custService.createCustomer("Abhishek");
+		Customer customer1 = custService.createCustomer("Arpit");
 		Item addedItem = service.create(17000.0, "Realme X smartphone");
 		Item addedItem1 = service.create(25000.0, "Redmi K20 smartphone");
 		Item fetchedItem = service.findByID(addedItem1.getId());
 		Long customerFetched = customer2.getId();
+		Long customerFetched1 = customer1.getId();
 		Item boughtItem = service.buyItem(addedItem.getId(), customerFetched);
+		Item boughtItem1 = service.buyItem(addedItem1.getId(), customerFetched1);
 		displayItemDetails(addedItem);
 		displayItemDetails(fetchedItem);
-		System.out.println("Item "+ boughtItem.getDescription()+" is bought by: "+ boughtItem.getBoughtBy().getName());
+		System.out.println(
+				"Item " + boughtItem.getDescription() + " is bought by: " + boughtItem.getBoughtBy().getName());
+		System.out.println(
+				"Item " + boughtItem1.getDescription() + " is bought by: " + boughtItem1.getBoughtBy().getName());*/
 	}
 
 	public void displayCustomerDetails(Customer customer) {

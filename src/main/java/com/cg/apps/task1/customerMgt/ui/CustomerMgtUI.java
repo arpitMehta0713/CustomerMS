@@ -14,26 +14,35 @@ import com.cg.apps.task1.customerMgt.exceptions.InvalidNameException;
 import com.cg.apps.task1.customerMgt.service.CustomerServiceImpl;
 import com.cg.apps.task1.customerMgt.service.ICustomerService;
 import com.cg.apps.task1.itemMgt.entities.Item;
+import com.cg.apps.task1.itemMgt.service.IItemService;
 
 @Component
 public class CustomerMgtUI {
 	@Autowired
-	private ICustomerService service;
+	private ICustomerService custService;
+	@Autowired
+	private IItemService itemService;
 
 	public void start() {
 		try {
-			Customer customer = service.createCustomer("Arpit");
-			Long customerFetched = customer.getId();
-			displayCustomerDetails(customer);
-			Set<Item> itemsBought = service.itemsBoughtByCustomer(customerFetched);
-			for (Item i : itemsBought) {
-				displayItemDetails(i);
-			}
-			System.out.println("Printing customer bought item details");
-			Set<Item> itemsBought2 = customer.getBoughtItems();
-			for (Item i : itemsBought2) {
-				displayItemDetails(i);
-			}
+			Customer customer2 = custService.createCustomer("Abhishek");
+			Customer customer1 = custService.createCustomer("Arpit");
+			Item addedItem = itemService.create(17000.0, "Realme X smartphone");
+			Item addedItem1 = itemService.create(25000.0, "Redmi K20 smartphone");
+			Long customer1Id = customer1.getId();
+			Long customer2Id = customer2.getId();
+			Item boughtItem = itemService.buyItem(addedItem.getId(), customer1Id);
+			Item boughtItem1 = itemService.buyItem(addedItem1.getId(), customer2Id);
+			System.out.println("Printing the items bought by " + customer1.getName());
+			Customer customer1Fetched = custService.findByID(customer1Id);
+			displayCustomerDetails(customer1Fetched);
+			/*
+			 * Customer customer = service.createCustomer("Arpit"); Long customerFetched =
+			 * customer.getId(); displayCustomerDetails(customer); Set<Item> itemsBought =
+			 * service.itemsBoughtByCustomer(customerFetched); for (Item i : itemsBought) {
+			 * displayItemDetails(i); } customer = service.findByID(customerFetched);
+			 * displayCustomerDetails(customer);
+			 */
 		} catch (InvalidCustomerIdException e) {
 			System.out.println(e.getMessage());
 		} catch (InvalidNameException e) {
@@ -51,6 +60,11 @@ public class CustomerMgtUI {
 	public void displayCustomerDetails(Customer customer) {
 		System.out.println("Id:" + customer.getId() + "\nName:" + customer.getName() + "\nAccountBalance:"
 				+ customer.getAccount().getBalance());
+		System.out.println("Printing details of items bought by " + customer.getName());
+		Set<Item> itemsBought = customer.getBoughtItems();
+		for (Item item : itemsBought) {
+			displayItemDetails(item);
+		}
 
 	}
 

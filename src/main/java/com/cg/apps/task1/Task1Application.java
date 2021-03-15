@@ -14,8 +14,8 @@ public class Task1Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Task1Application.class, args);
 		CustomerMgtUI custMgtUi = context.getBean(CustomerMgtUI.class);
 		custMgtUi.start();
-		ItemMgtUI itemUI = context.getBean(ItemMgtUI.class);
-		itemUI.start();
+		/*ItemMgtUI itemUI = context.getBean(ItemMgtUI.class);
+		itemUI.start();*/
 	}
 
 }
