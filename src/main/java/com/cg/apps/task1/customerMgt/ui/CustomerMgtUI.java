@@ -37,13 +37,6 @@ public class CustomerMgtUI {
 			Customer customer1Fetched = custService.findByID(customer1Id);
 			displayCustomerDetails(customer1Fetched);
 			
-			/*
-			 * Customer customer = service.createCustomer("Arpit"); Long customerFetched =
-			 * customer.getId(); displayCustomerDetails(customer); Set<Item> itemsBought =
-			 * service.itemsBoughtByCustomer(customerFetched); for (Item i : itemsBought) {
-			 * displayItemDetails(i); } customer = service.findByID(customerFetched);
-			 * displayCustomerDetails(customer);
-			 */
 		} catch (InvalidCustomerIdException e) {
 			System.out.println(e.getMessage());
 		} catch (InvalidNameException e) {

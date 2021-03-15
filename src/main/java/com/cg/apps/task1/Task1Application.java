@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.cg.apps.task1.customerMgt.ui.CustomerMgtUI;
-import com.cg.apps.task1.itemMgt.ui.ItemMgtUI;
 
 @SpringBootApplication
 public class Task1Application {
