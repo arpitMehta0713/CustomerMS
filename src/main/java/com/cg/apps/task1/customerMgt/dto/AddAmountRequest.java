@@ -4,11 +4,7 @@ public class AddAmountRequest {
 	private Long id;
 	private double amount;
 
-	public AddAmountRequest(Long id, double amount) {
-		super();
-		this.id = id;
-		this.amount = amount;
-	}
+	
 
 	public Long getId() {
 		return id;

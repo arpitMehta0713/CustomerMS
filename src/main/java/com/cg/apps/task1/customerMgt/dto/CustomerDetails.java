@@ -1,6 +1,7 @@
 package com.cg.apps.task1.customerMgt.dto;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 public class CustomerDetails {
 	private long id;
@@ -8,13 +9,18 @@ public class CustomerDetails {
 	private long accountId;
 	private double balance;
 	private LocalDateTime accountCreatedTime;
+	private Set<String> descriptions;
 
-	public CustomerDetails(long id, String name, long accountId, double balance, LocalDateTime accountCreatedTime) {
-		this.id = id;
-		this.name = name;
-		this.accountId = accountId;
-		this.balance = balance;
-		this.accountCreatedTime = accountCreatedTime;
+	public Set<String> getDescriptions() {
+		return descriptions;
+	}
+
+	public void setDescriptions(Set<String> descriptions) {
+		this.descriptions = descriptions;
+	}
+
+	public CustomerDetails() {
+
 	}
 
 	public long getId() {

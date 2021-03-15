@@ -36,6 +36,7 @@ public class CustomerMgtUI {
 			System.out.println("Printing the items bought by " + customer1.getName());
 			Customer customer1Fetched = custService.findByID(customer1Id);
 			displayCustomerDetails(customer1Fetched);
+			
 			/*
 			 * Customer customer = service.createCustomer("Arpit"); Long customerFetched =
 			 * customer.getId(); displayCustomerDetails(customer); Set<Item> itemsBought =
